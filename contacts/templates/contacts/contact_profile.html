@@ -1,0 +1,72 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+  href="{% static 'contact_profile_style.css' %}">
+  
+<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+  <title>Contact Profile Page</title>
+</head>
+
+<body>
+<div class="container">
+  <header class="hero">
+    <a href="{% url 'index' %}">
+      <i class="fa-solid fa-arrow-circle-left fa-2x back-btn"></i>
+    </a>
+    
+    <div class="hero-info">
+      <h1 class="name">{{contact.full_name | title}}</h1>
+      <p class="relationship">{{contact.relationship}}</p>
+    </div>
+  </header>
+  
+  <section class="contact-info">
+    
+    <div class="info-line">
+     <i class="fa-solid fa-phone fa-2x icon-gradient">
+         </i>
+     <p class="phone-number">{{contact.phone_number}}</p>
+    </div>
+    
+       
+    <div class="info-line">
+     <i class="fa-solid fa-sms fa-2x icon-gradient text"></i>
+     <p class="sms">Send Message</p>
+    </div>
+    
+    
+       
+    <div class="info-line">
+     <i class=" icon-gradient fa-solid 
+     fa-envelope fa-2x">
+         </i>
+     <p class="email">{{contact.email}}</p>
+    </div>
+    
+       
+    <div class="info-line">
+     <i id="location" class="icon-gradient fa-solid fa-map-marker-alt fa-2x">
+         </i>
+     <p class="address">{{contact.address}}</p>
+    </div>
+  </section>
+  
+  <a href="{% url 'edit_contact' contact.id %}">
+    <section class="edit-contact">
+      <div class="edit-btn">
+        <i class="icon-gradient fa-solid fa-cog"></i>
+      </div>
+    </section>
+  </a>
+  
+</div>
+
+ <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+
+</html>

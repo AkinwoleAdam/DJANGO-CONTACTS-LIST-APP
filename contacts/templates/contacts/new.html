@@ -1,0 +1,81 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+   <link rel="stylesheet" 
+  href="{% static 'edit_style.css' %}">
+  
+<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+  <title>New Contact</title>
+</head>
+
+<body>
+<div class="container">
+  <header class="hero">
+    <a href="{% url 'index' %}">
+      <i class="fa-solid fa-arrow-circle-left fa-2x back-btn"></i>
+    </a>
+    <div class="hero-info">
+      <h1 class="name">New Contact</h1>
+    </div>
+  </header>
+  
+  <form action="" method="POST">
+  {% csrf_token %}
+  
+  <section class="contact-info">
+    
+    <div class="info-line">
+     <i class="fa-solid fa-phone fa-2x icon-gradient">
+     </i>
+  <input type="text" class="create" 
+  name="fullname" placeholder="Full Name">
+    </div>
+    
+       
+    <div class="info-line">
+     <i class="fa-solid fa-sms fa-2x icon-gradient text"></i>
+     <input type="text" class="create" name="relationship" placeholder="Relationship">
+    </div>
+    
+    
+       
+    <div class="info-line">
+     <i class=" icon-gradient fa-solid 
+     fa-envelope fa-2x">
+    </i>
+      <input type="email" class="create" name="email" placeholder="Email Address">
+    </div>
+    
+       
+    <div class="info-line">
+     <i id="location" class="icon-gradient fa-solid fa-map-marker-alt fa-2x">
+         </i>
+       <input type="text" class="create" name="address" placeholder="Address">
+    </div>
+    
+       
+    <div class="info-line">
+       <i class="fa-solid fa-phone fa-2x icon-gradient"></i>
+       <input type="tel" class="create" name="phone" placeholder="Phone Number">
+    </div>
+  </section>
+  
+  <section class="button_container">
+  <a href="index.html">
+    <div class="update_contact">
+      <i class="fa-solid fa-check-circle icon-gradient"></i>
+     <button class="button">Save Contact</button>
+    </div>
+  </a>
+  </section>
+  
+    </form>
+  </div>
+
+ <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+
+</html>

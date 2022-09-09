@@ -1,0 +1,70 @@
+{% load static %} 
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=Edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+
+  <title>CONTACTS LIST APP</title>
+  
+<link rel="stylesheet" href="{% static 'style.css' %}">
+
+<!----------
+<link rel="stylesheet" href="css/bootstrap.min.css">
+-------->
+
+<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+</head>
+
+
+<body>
+ <div class="container">
+   <h2> MY CONTACTS LIST</h2>
+   <header class="header">
+    <form class="search-bar">
+      <input type="search" class="contact_search" name="search_area" placeholder="Search" value="{{search_input}}">
+    </form>
+    <a href="{% url 'add_contact' %}">
+     <i class="fa-solid fa-plus-circle
+   add">
+    </i>
+  </a>
+   </header>
+   
+   <!------ CONTACTS ------->
+   
+   <section class="contacts_library">
+     <ul class="contacts_list">
+     {% for contact in contacts reversed %}
+    <a href="{% url 'contact_profile' contact.id %}">
+      <div class="contact_section">
+         <li class="list_item">
+           <h3 class="contact_name">
+             {{contact.full_name}}</h3>
+           <p class="relationship">
+             {{contact.relationship}}</p>
+         </li>
+         <li class="list_item">
+           <i class="fa-solid fa-phone fa-2x"></i>
+           <i class="fa-solid fa-sms fa-2x text"></i>
+         </li>
+      </div>
+    </a>
+      <hr>
+      {% empty %}
+      <h3 style="padding:2em;"> No contacts found...</h3>
+      {% endfor %}
+    
+ </ul>
+   </section>
+ </div>
+ 
+  
+  <!-------
+  <script src="js/bootstrap.min.js"></script>
+  -------->
+  
+ <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+</html>

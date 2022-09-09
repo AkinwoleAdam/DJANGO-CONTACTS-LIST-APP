@@ -1,0 +1,47 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" 
+  href="{% static 'delete_contact.css' %}">
+<link rel="stylesheet" href="{% static 'css/all.min.css'%}">
+  <title>Delete Contact</title>
+</head>
+
+<body>
+  <div class="container">
+  <header class="hero">
+    <a href="{% url 'edit_contact' contact.id %}">
+      <i class="fa-solid fa-arrow-circle-left fa-2x back-btn"></i>
+    </a>
+    <div class="hero-info">
+      <h1 class="name">{{contact.full_name}}</h1>
+      <p class="relationship">{{contact.relationship}}</p>
+    </div>
+  </header>
+
+ 
+ <section class="delete_container">
+   <p>Are you sure you want to delete this contact?</p>
+<form action="" method="POST">
+  <a href="{% url 'edit_contact' contact.id %}">
+  {% csrf_token %}
+    <div class="delete_contact">
+      <i class="fa-solid fa-trash 
+      icon-gradient"></i>
+     <button class="button">
+       Delete Contact</button> 
+  </a>
+  </div>
+  </form>
+  
+  </section>
+</div>
+
+
+ <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+</html>

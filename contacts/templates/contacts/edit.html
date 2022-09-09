@@ -1,0 +1,92 @@
+{% load static %}
+<!DOCTYPE html>
+<html>
+
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+ <link rel="stylesheet" 
+  href="{% static 'edit_style.css' %}">
+<link rel="stylesheet" href="{% static 'css/all.min.css' %}">
+  <title>Edit Contact</title>
+</head>
+
+<body>
+<div class="container">
+  <header class="hero">
+    <a href="{% url 'contact_profile' contact.id %}">
+      <i class="fa-solid fa-arrow-circle-left fa-2x back-btn"></i>
+    </a>
+    <div class="hero-info">
+      <h1 class="name">{{contact.full_name}}
+      </h1>
+      <p class="relationship">{{contact.relationship}}</p>
+    </div>
+  </header>
+  
+  <form action="" method="POST">
+  {% csrf_token %}
+  <section class="contact-info">
+    
+    <div class="info-line">
+     <i class="fa-solid fa-phone fa-2x icon-gradient">
+     </i>
+  <input type="text" class="create" 
+  name="fullname" placeholder="Full Name" value="{{contact.full_name}}">
+    </div>
+    
+       
+    <div class="info-line">
+     <i class="fa-solid fa-sms fa-2x icon-gradient text"></i>
+     <input type="text" class="create" name="relationship" placeholder="Relationship" value="{{contact.relationship}}">
+    </div>
+    
+    
+       
+    <div class="info-line">
+     <i class=" icon-gradient fa-solid 
+     fa-envelope fa-2x">
+    </i>
+      <input type="email" class="create" name="email" placeholder="Your Email" value="{{contact.email}}">
+    </div>
+    
+       
+    <div class="info-line">
+     <i id="location" class="icon-gradient fa-solid fa-map-marker-alt fa-2x">
+         </i>
+       <input type="text" class="create" name="address" placeholder="Address" value="{{contact.address}}">
+    </div>
+    
+       
+    <div class="info-line">
+       <i class="fa-solid fa-phone fa-2x icon-gradient"></i>
+       <input type="tel" class="create" name="phone" placeholder="Phone Number" value="{{contact.phone_number}}">
+    </div>
+  </section>
+  
+  <section class="button_container">
+  <a href="{% url 'contact_profile' contact.id %}">
+    <div class="update_contact">
+      <i class="fa-solid fa-check-circle icon-gradient"></i>
+     <button class="button">Save Contact</button>
+    </div>
+  </a>
+  </section>
+</form>
+    
+  <section class="button_container">
+  <a href="{% url 'delete_contact' contact.id %}">
+    <div class="update_contact">
+      <i class="fa-solid fa-trash 
+      icon-gradient"></i>
+     <button class="button">
+       Delete Contact</button>
+    </div>
+  </a>
+  </section>
+  </div>
+
+ <script src="{% static 'js/all.min.js' %}"></script>
+</body>
+
+</html>
