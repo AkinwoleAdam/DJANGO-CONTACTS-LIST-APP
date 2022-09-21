@@ -1,0 +1,111 @@
+@import url('https://fonts.googleapis.com/css2?family=Bai+Jamjuree&family=Inter&family=Kantumruy+Pro:ital@0;1&family=Karla&family=Kumbh+Sans&family=Lexend+Deca&family=Poppins:ital,wght@0,200;1,200&family=Raleway:ital,wght@0,200;0,400;1,200&family=Red+Hat+Display:wght@500&family=Roboto&family=Tajawal&display=swap');
+
+body {
+    font-size:1rem;
+    font-family:'Poppins',sans-serif;
+    color: #fff;
+    min-height:140vh;
+}
+
+.container{
+  margin:0 auto;
+  max-width:428px;
+  background: #313438;
+  
+}
+
+.hero{
+  background: linear-gradient(90deg,rgba(66,159,124,1)0%,rgba(161,193,78,1)100%);
+  padding:2em 0;
+}
+
+.relationship{
+  width:6em;
+  text-align: center;
+  padding:.4em .5em;
+  border-radius: 100px;
+  border-top-left-radius:0;
+  font-size:1em;
+  background-color:#75a85e;
+}
+
+a{
+  text-decoration:none;
+  color:#fff;
+}
+
+.back-btn{
+  padding-left:.3em;
+}
+
+.hero-info{
+  display:flex;
+  flex-flow: column;
+  align-items: center;
+}
+
+.contact-info{
+  padding:3em 1.5em;
+}
+
+
+.info-line{
+  display: flex;
+  padding: 1em 1em;
+  margin:0 auto;
+  margin-top: 2em;
+  width:90%;
+  align-items: center;
+  border-radius:20px;
+  box-shadow: inset 6px 6px 12px #2d2f33,inset -6px -6px 12px #35393d;
+}
+
+.info-line p{
+  margin:0;
+  padding-bottom:1em;
+  text-align: center;
+}
+
+.icon-gradient{
+  background: linear-gradient(90deg,rgba(66,159,124,1)0%,rgba(161,193,78,1)100%);
+  padding:.4em;
+  border-radius:100px;
+}
+
+.create{
+  border:none;
+  background:none;
+  outline: none;
+  padding-left:2em;
+  font-size: 1.2em;
+  color: #fff;
+  width:60%;
+}
+
+.delete_container{
+  padding:.5em;
+  text-align: center;
+}
+
+.delete_contact{
+  margin:0 auto;
+  padding:1em 2em;
+  width:70%;
+  display:flex;
+  align-items: center;
+  border-radius: 20px;
+  box-shadow:6px 6px 12px #2d2f33,-6px -6px 12px #35393d;
+  margin-bottom:2em;
+}
+
+
+.button{
+  padding-left:1em;
+  font-size: 1.2em;
+  background:#313438;
+  border: none;
+  outline:none;
+  color:#fff;
+  cursor:pointer;
+  justify-items: center;
+}
